@@ -27,6 +27,10 @@ Team Stats
 - Games Won
 - Yes/No Made Playoffs
 - What Round In Playoffs Did They Make(1,2,3,4)
+- 5-Year-Performance Trend
+    - Yes/No Made Playoffs
+    - What Round In Playoffs Did They Make
+
 Team Salary Data
 - Player Salary as Percentage of Team Salary
 - Number of Years Left On Players’ Contracts

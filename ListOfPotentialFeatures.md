@@ -1,4 +1,4 @@
-Features List: Definitive
+## Features List: Definitive
 - All Players; 2015-2016 Season to 2025-2026 Season
 - Regular Season PPG
 - Regular Season RPG
@@ -33,9 +33,18 @@ Team Salary Data
 - Total Team Salary(Inflation Adjusted)
 - Luxury Tax Markers (1st Apron, 2nd Apron, etc.)
 
-Maybe:
+### Maybe:
 - Injury Data
 - Disciplinary Actions
 
-Look More Into:
+### Look More Into:
 - Data on number of draft picks the team has during that season
+
+## Format of CSV/Dataframes
+One row = 1 Player + Season + Team
+
+Example:
+Player A; 2015-2016; Team X; Age 25; …
+Player A; 2016-2017; Team Y; Age 26; …
+
+Separate Rows

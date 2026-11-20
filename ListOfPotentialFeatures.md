@@ -22,6 +22,7 @@
     - Box +/-
     - Minutes
     - Games Played
+
 Team Stats
 - Regular Season Final Standing(Seed)
 - Games Won
@@ -39,13 +40,6 @@ Team Salary Data
 - Luxury Tax Markers (Over Cap, Over Tax Line, Over 1st Apron, Over 2nd Apron, Tax Tier 0-4)
 - Dollars Above/Below Each Threshold (Cap, Tax Line, 1st Apron, 2nd Apron; in dollars and as % of cap)
 - Total Team Payroll (as % of Salary Cap)
-
-### Maybe:
-- Injury Data
-- Disciplinary Actions
-
-### Look More Into:
-- Data on number of draft picks the team has during that season
 
 ## Format of CSV/Dataframes
 One row = 1 Player + Season + Team

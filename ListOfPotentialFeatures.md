@@ -5,6 +5,7 @@
 - Regular Season APG
 - Regular Season BPG
 - Regular Season SPG
+- Regular Season True Shooting %
 - Regular Season Games Played
 - Regular Season Minutes/Game
 - Regular Season Box +/-
@@ -14,6 +15,7 @@
 - Playoff BPG
 - Playoff SPG
 - Playoff Box +/-
+- Playoff True Shooting %
 - Playoff Minutes/Game
 - Age
 - Years In The NBA

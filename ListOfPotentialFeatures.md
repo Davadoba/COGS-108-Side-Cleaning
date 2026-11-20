@@ -32,10 +32,13 @@ Team Stats
     - What Round In Playoffs Did They Make
 
 Team Salary Data
-- Player Salary as Percentage of Team Salary
-- Number of Years Left On Players’ Contracts
-- Total Team Salary(Inflation Adjusted)
-- Luxury Tax Markers (1st Apron, 2nd Apron, etc.)
+- Player Salary as Percentage of Salary Cap
+- Number of Years Left On Player Contracts
+- Expiring Contract Flag
+- Minimum-Salary Contract Flag (signed with the minimum-salary exception; also a version requiring the team to be over the cap)
+- Luxury Tax Markers (Over Cap, Over Tax Line, Over 1st Apron, Over 2nd Apron, Tax Tier 0-4)
+- Dollars Above/Below Each Threshold (Cap, Tax Line, 1st Apron, 2nd Apron; in dollars and as % of cap)
+- Total Team Payroll (as % of Salary Cap)
 
 ### Maybe:
 - Injury Data

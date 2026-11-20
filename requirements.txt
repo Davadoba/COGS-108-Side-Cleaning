@@ -1,0 +1,14 @@
+# Python 3.14 (tested with 3.14.7)
+# Install:  pip install -r requirements.txt
+
+# data
+pandas==3.0.6
+numpy==2.5.4
+duckdb==2.0.0          # reads the llimllib/nba_data parquet catalog (New-Cleaning/salary-data/02)
+requests==2.34.2       # downloads (Hugging Face, ESPN API)
+matplotlib==3.11.2
+tqdm==4.70.1           # progress bars in Old-Cleaning-And-Combining
+
+# notebooks
+ipykernel==7.4.0       # lets VS Code / Jupyter run the notebooks with this environment
+nbconvert==7.17.2      # run notebooks from the command line (jupyter nbconvert --execute)

@@ -1,1 +1,6 @@
 /data-files/*
+__pycache__/
+
+# virtual environments
+venv/
+.venv/

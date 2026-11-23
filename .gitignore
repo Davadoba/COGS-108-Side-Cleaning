@@ -4,3 +4,8 @@ __pycache__/
 # virtual environments
 venv/
 .venv/
+
+# Related to uv package python
+.python-version
+pyproject.toml
+uv.lock

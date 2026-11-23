@@ -46,6 +46,27 @@ jupyter nbconvert --to notebook --execute --inplace 999_combining.ipynb
 
 Details on each dataset, the output columns, and the join keys are in [New-Cleaning/salary-data/README.md](New-Cleaning/salary-data/README.md).
 
+### Team performance features: `New-Cleaning/team-performance/`
+
+Run in this order. 02 reads two of 01's raw files, and 999 reads both outputs.
+
+| # | Notebook | What it does |
+|---|---|---|
+| 1 | `01-llimllib-Team-Records-Playoffs.ipynb` | Wins, made playoffs, furthest playoff round (5 = champion), 5-year playoff trends |
+| 2 | `02-ESPN-Conference-Standings.ipynb` | Official regular-season standing (with tiebreakers) and the seed after the play-in, from ESPN |
+| 3 | `999_combining.ipynb` | Merges 1 + 2 → **`data-files/02-processed/team_performance_combined.csv`** |
+
+One row per team + season. Left-join it onto the player tables on `season` + `team`. It uses `nba_cleaning_utils.py` from `salary-data/`, but it doesn't depend on any salary notebook output.
+
+```bash
+cd New-Cleaning/team-performance
+jupyter nbconvert --to notebook --execute --inplace 01-llimllib-Team-Records-Playoffs.ipynb
+jupyter nbconvert --to notebook --execute --inplace 02-ESPN-Conference-Standings.ipynb
+jupyter nbconvert --to notebook --execute --inplace 999_combining.ipynb
+```
+
+Details are in [New-Cleaning/team-performance/README.md](New-Cleaning/team-performance/README.md).
+
 ## Folder layout
 
 ```
@@ -55,6 +76,7 @@ data-files/
   02-processed/    cleaned tables (what modeling reads)
 New-Cleaning/      current cleaning notebooks, one subfolder per feature group
   salary-data/
+  team-performance/
 Old-Cleaning-And-Combining/, Old-Notebook/   earlier versions, kept for reference
 ```
 

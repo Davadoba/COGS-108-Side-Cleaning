@@ -1,5 +1,6 @@
 ## Features List: Definitive
-- All Players; 2015-2016 Season to 2025-2026 Season
+- Players under contract for the following season (contract not expiring); 2015-2016 Season to 2025-2026 Season
+    - Expiring-contract players become free agents and can rarely be traded in the offseason, so they are left out
 - Regular Season PPG
 - Regular Season RPG
 - Regular Season APG
@@ -37,7 +38,7 @@ Team Stats
 Team Salary Data
 - Player Salary as Percentage of Salary Cap
 - Number of Years Left On Player Contracts
-- Expiring Contract Flag
+- ~~Expiring Contract Flag~~ (used only to filter the rows; every remaining player is non-expiring)
 - Minimum-Salary Contract Flag (signed with the minimum-salary exception; also a version requiring the team to be over the cap)
 - Luxury Tax Markers (Over Cap, Over Tax Line, Over 1st Apron, Over 2nd Apron, Tax Tier 0-4)
 - Dollars Above/Below Each Threshold (Cap, Tax Line, 1st Apron, 2nd Apron; in dollars and as % of cap)

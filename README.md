@@ -31,8 +31,8 @@ Run in this order. Each notebook reads the previous one's output.
 |---|---|---|
 | 1 | `01-Cap-Tax-Apron-Thresholds.ipynb` | League salary cap, luxury-tax line, and aprons for each season |
 | 2 | `02-llimllib-Salaries-Payroll.ipynb` | Player salaries → % of cap, team payroll, luxury-tax markers, dollars above/below each line |
-| 3 | `03-ESPN-Player-Contracts.ipynb` | Years left on contract, expiring-contract flag, minimum-salary flag |
-| 4 | `999_combining.ipynb` | Merges 2 + 3 → **`data-files/02-processed/salary_features_combined.csv`** |
+| 3 | `03-ESPN-Player-Contracts.ipynb` | Years left on contract, expiring-contract flag (used as a filter), minimum-salary flag |
+| 4 | `999_combining.ipynb` | Merges 2 + 3 and keeps only players under contract for the next season → **`data-files/02-processed/salary_features_combined.csv`** |
 
 Either open each notebook and choose **Run All**, or run them all from the terminal (with the venv activated):
 

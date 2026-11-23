@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import requests
 
 _DATA_DIR = Path(__file__).resolve().parents[2] / 'data-files'
@@ -56,6 +57,25 @@ def normalize_name(name):
     name = re.sub(r'[-,]', ' ', name)
     name = re.sub(r'\b(jr|sr|ii|iii|iv|v)\b', ' ', name)
     return ' '.join(name.split())
+
+
+def prior_seasons_average(df, id_col, value_cols, n=3):
+    """Average of each value column over the player's rows in the n seasons BEFORE each row (season-n .. season-1).
+
+    The current season is never included. Seasons the player has no row for are skipped, so the average uses
+    whichever of the n seasons he played. Returns one row per (id_col, season) of `df`, with
+    avg_<col>_last_<n> columns and seasons_played_last_<n> (0-n). The averages are NaN when that count is 0.
+    """
+    base = df[[id_col, 'season'] + value_cols]
+    # Relabel each row as season+1, season+2, ..., season+n, so each row lands on the n seasons that follow it.
+    shifted = pd.concat([base.assign(season=base['season'] + k) for k in range(1, n + 1)], ignore_index=True)
+    agg = shifted.groupby([id_col, 'season']).agg(
+        **{f'avg_{c}_last_{n}': (c, 'mean') for c in value_cols},
+        **{f'seasons_played_last_{n}': ('season', 'size')},
+    ).reset_index()
+    out = df[[id_col, 'season']].merge(agg, on=[id_col, 'season'], how='left', validate='one_to_one')
+    out[f'seasons_played_last_{n}'] = out[f'seasons_played_last_{n}'].fillna(0).astype(int)
+    return out
 
 
 # ESPN uses a few non-standard abbreviations; map them to the NBA's own.

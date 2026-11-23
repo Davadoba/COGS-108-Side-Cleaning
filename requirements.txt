@@ -5,7 +5,8 @@
 pandas==3.0.6
 numpy==2.5.4
 duckdb==2.0.0          # reads the llimllib/nba_data parquet catalog (New-Cleaning/salary-data/02)
-requests==2.34.2       # downloads (Hugging Face, ESPN API)
+requests==2.34.2       # downloads (Hugging Face, ESPN API, Basketball-Reference)
+beautifulsoup4==4.15.0 # parses the Basketball-Reference pages (New-Cleaning/player-stats/03)
 matplotlib==3.11.2
 tqdm==4.70.1           # progress bars in Old-Cleaning-And-Combining
 

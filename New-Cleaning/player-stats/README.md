@@ -15,7 +15,7 @@ Builds the individual player-stat features from [ListOfPotentialFeatures.md](../
 - **03 waits 4 seconds between pages**, to respect Basketball-Reference's limit of 20 requests per minute. Its 25 pages take under 2 minutes once and are skipped after.
 - **All four notebooks import shared helpers** (paths, season range, `normalize_name`, and the new `prior_seasons_average`) from `../salary-data/nba_cleaning_utils.py`.
 
-The two EDA notebooks (`nba_player_stats_regular_season_eda.ipynb`, `Playoffs-EDA.ipynb`) are from the earlier version of this folder. They still read the old cleaned CSVs in `data/02-processed/`, which are kept for them, and they are not part of the pipeline above.
+The EDA for these features is in [`EDA/player-stats/`](../../EDA/player-stats/) at the repo root. It reads `player_stats_combined.csv`.
 
 ## Final table: `player_stats_combined.csv`
 

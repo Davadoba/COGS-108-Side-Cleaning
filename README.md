@@ -90,6 +90,10 @@ jupyter nbconvert --to notebook --execute --inplace 999_combining.ipynb
 
 Details are in [New-Cleaning/player-stats/README.md](New-Cleaning/player-stats/README.md).
 
+### Exploratory data analysis: `EDA/`
+
+The EDA notebooks are kept apart from the cleaning pipeline. They only **read** the cleaned tables in `data-files/02-processed/`, so run the matching `New-Cleaning/` notebooks first. See [EDA/README.md](EDA/README.md).
+
 ## Folder layout
 
 ```
@@ -101,8 +105,13 @@ New-Cleaning/      current cleaning notebooks, one subfolder per feature group
   salary-data/
   team-performance/
   player-stats/
+EDA/               exploratory analysis notebooks (read data-files/02-processed/, write nothing)
+  llimllib-salary/
+  player-stats/
 Old-Cleaning-And-Combining/, Old-Notebook/   earlier versions, kept for reference
 ```
+
+The notebooks in `New-Cleaning/`, `EDA/`, and `Old-Cleaning-And-Combining/` read and write data only in `data-files/`, through the paths defined in `nba_cleaning_utils.py`. The one exception is the archived `Old-Notebook/01-DataCheckpoint.ipynb`, which still uses relative `data/...` paths.
 
 ## Conventions
 

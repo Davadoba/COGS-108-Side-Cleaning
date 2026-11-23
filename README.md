@@ -67,6 +67,29 @@ jupyter nbconvert --to notebook --execute --inplace 999_combining.ipynb
 
 Details are in [New-Cleaning/team-performance/README.md](New-Cleaning/team-performance/README.md).
 
+### Player stats features: `New-Cleaning/player-stats/`
+
+Run in this order. 02 reads 01's raw files, and 999 reads all three outputs.
+
+| # | Notebook | What it does |
+|---|---|---|
+| 1 | `01-llimllib-Regular-Season-Stats.ipynb` | Regular-season per-game stats and true shooting %, age, years in the NBA, 3-year averages of the prior seasons |
+| 2 | `02-llimllib-Playoff-Stats.ipynb` | Playoff per-game stats and true shooting % |
+| 3 | `03-bbref-Box-Plus-Minus.ipynb` | Regular-season and playoff Box Plus/Minus from Basketball-Reference, and its 3-year average (25 pages, downloaded slowly to respect the site's rate limit) |
+| 4 | `999_combining.ipynb` | Merges 1 + 2 + 3 → **`data-files/02-processed/player_stats_combined.csv`** |
+
+One row per player + season. Left-join it onto the salary table on `season` + `nba_player_id`. It uses `nba_cleaning_utils.py` from `salary-data/`, but it doesn't depend on any salary notebook output.
+
+```bash
+cd New-Cleaning/player-stats
+jupyter nbconvert --to notebook --execute --inplace 01-llimllib-Regular-Season-Stats.ipynb
+jupyter nbconvert --to notebook --execute --inplace 02-llimllib-Playoff-Stats.ipynb
+jupyter nbconvert --to notebook --execute --inplace 03-bbref-Box-Plus-Minus.ipynb
+jupyter nbconvert --to notebook --execute --inplace 999_combining.ipynb
+```
+
+Details are in [New-Cleaning/player-stats/README.md](New-Cleaning/player-stats/README.md).
+
 ## Folder layout
 
 ```
@@ -77,6 +100,7 @@ data-files/
 New-Cleaning/      current cleaning notebooks, one subfolder per feature group
   salary-data/
   team-performance/
+  player-stats/
 Old-Cleaning-And-Combining/, Old-Notebook/   earlier versions, kept for reference
 ```
 
